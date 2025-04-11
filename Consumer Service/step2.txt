@@ -1,0 +1,39 @@
+STEP 9: Install zeep in Python
+Run this command in your terminal or Anaconda prompt:
+
+bash
+Copy
+Edit
+pip install zeep
+📝 STEP 10: Create Python Client – client.py
+Create a new file called client.py and paste this:
+
+python
+Copy
+Edit
+from zeep import Client
+
+# Point to the WSDL URL of your running Java service
+wsdl_url = 'http://localhost:8080/hello?wsdl'
+
+# Create the SOAP client
+client = Client(wsdl=wsdl_url)
+
+# Call the sayHello method
+response = client.service.sayHello("Imtiaz")
+
+# Print the response
+print("Response from Java SOAP Service:", response)
+▶️ STEP 11: Run the Python Client
+In terminal, run:
+
+bash
+Copy
+Edit
+python client.py
+✅ You should see:
+
+csharp
+Copy
+Edit
+Response from Java SOAP Service: Hello, Imtiaz! This is a SOAP response from Java.
